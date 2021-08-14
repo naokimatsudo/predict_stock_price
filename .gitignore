@@ -1,6 +1,8 @@
 .env
 .DS_Store
 
+src/public/
+
 /vendor/
 node_modules/
 npm-debug.log
