@@ -16,6 +16,8 @@
 <div id="app">
   {{-- @{{ message }} --}}
   <header-component></header-component>
+
+  <router-view></router-view>
 </div>
 <!-- Scripts -->
 <script src="{{ asset('/js/app.js') }}" defer></script>
