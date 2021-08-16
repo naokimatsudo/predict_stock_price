@@ -10,6 +10,12 @@
                   <router-link v-bind:to="{name: 'task.create'}">
                     <button class="btn btn-success">ADD</button>
                   </router-link>
+                  <router-link v-bind:to="{name: 'user.regist'}">
+                    <button class="btn btn-success">SIGN IN</button>
+                  </router-link>
+                  <router-link v-bind:to="{name: 'user.login'}">
+                    <button class="btn btn-success">LOGIN</button>
+                  </router-link>
                 </div>
             </nav>
         </div>

@@ -33,17 +33,18 @@ services:
     build:
       context: .
       dockerfile: ./docker/mysql/Dockerfile
-    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci && mysql -umysql -p"${DB_PASSWORD}"
+    # command: mysql -umysql -p${DB_PASSWORD}
     ports:
       - target: 3306
         published: ${DB_PORT}
         protocol: tcp
         mode: host
     environment: 
-      MYSQL_DATABASE: "predict_stock_price"
-      MYSQL_USER: "mysql"
-      MYSQL_PASSWORD: "dklja;dlsjfa;lkjfsa;298ud"
-      MYSQL_ROOT_PASSWORD: "dlasfj;dlskfj;dslj"
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       TZ: 'Asia/Tokyo'
     volumes:
       - type: volume
